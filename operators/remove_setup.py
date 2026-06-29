@@ -9,7 +9,7 @@ from ..core.camera_display import schedule_camera_safe_areas_sync
 class OPENGATE_OT_remove_setup(bpy.types.Operator):
     bl_idname = "opengate.remove_setup"
     bl_label = "Remove OpenGate Setup"
-    bl_description = "Remove mask overlay and restore camera backgrounds"
+    bl_description = "Remove mask overlay, restore camera backgrounds, and delete the image collector"
     bl_options = {"REGISTER", "UNDO"}
 
     def execute(self, context):

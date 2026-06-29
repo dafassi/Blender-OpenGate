@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "opengate"
-version = "0.3.0"
+version = "0.3.1"
 name = "OpenGate"
 tagline = "Social media render formats made simple"
 maintainer = "Ryan Guy & Dennis Fassbaender <support@flipfluids.com>"

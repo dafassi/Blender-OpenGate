@@ -156,6 +156,41 @@ def ensure_image_collector(scene: bpy.types.Scene) -> bpy.types.Object:
     return obj
 
 
+def _is_collector_mask_image(image: bpy.types.Image) -> bool:
+    tagged = image.get(OPENGATE_MASK_FILE_KEY)
+    if isinstance(tagged, str) and is_opengate_mask_file(tagged):
+        return True
+    if is_opengate_mask_file(image.name):
+        return True
+    if image.filepath:
+        basename = os.path.basename(image.filepath.replace("\\", "/"))
+        if is_opengate_mask_file(basename):
+            return True
+    return False
+
+
+def remove_image_collector() -> bool:
+    """Remove the appended collector object and unused OpenGate mask images."""
+    global _COLLECTOR_IMAGES_TAGGED
+    removed_object = False
+
+    obj = bpy.data.objects.get(COLLECTOR_OBJECT_NAME)
+    if obj is not None:
+        mesh = obj.data if obj.type == "MESH" else None
+        bpy.data.objects.remove(obj, do_unlink=True)
+        if mesh is not None and mesh.users == 0:
+            bpy.data.meshes.remove(mesh)
+        removed_object = True
+
+    for image in list(bpy.data.images):
+        if image.users != 0 or not _is_collector_mask_image(image):
+            continue
+        bpy.data.images.remove(image)
+
+    _COLLECTOR_IMAGES_TAGGED = False
+    return removed_object
+
+
 def resolve_collector_image_name(
     mask_flags: int,
     *,

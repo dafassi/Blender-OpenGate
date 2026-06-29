@@ -6,6 +6,7 @@ import bpy
 
 from .background_image import clear_opengate_background, sync_opengate_background
 from .camera_target import assign_target_camera, get_target_camera
+from .image_collector import remove_image_collector
 from .masks import has_active_framing_mask
 from .render_format import apply_canvas_resolution
 
@@ -14,6 +15,7 @@ def clear_mask_setup(context: bpy.types.Context) -> None:
     scene = context.scene
     settings = scene.opengate
     clear_opengate_background(scene, settings)
+    remove_image_collector()
 
 
 def try_ensure_mask_setup(context: bpy.types.Context) -> str | None:
