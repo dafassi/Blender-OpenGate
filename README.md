@@ -2,6 +2,16 @@
 
 **Version 0.3.0** — Blender extension for social-media framing: render a square **Open Gate** master, preview aspect-ratio masks in the camera view, and export platform-ready crops for YouTube, Instagram, TikTok, Facebook, LinkedIn, and X.
 
+## Screenshots
+
+**16:9 landscape framing**
+
+![OpenGate 16:9 viewport framing](docs/screenshots/opengate-16_9.jpg)
+
+**9:16 portrait framing (with safe zones)**
+
+![OpenGate 9:16 viewport framing](docs/screenshots/opengate-9_16.jpg)
+
 ## Requirements
 
 - Blender **5.1+** — developed and tested on 5.1; older versions have not been tested.
@@ -38,6 +48,7 @@ opengate/
 ├── properties.py, prefs.py
 ├── core/
 ├── operators/, ui/
+├── docs/screenshots/   # README images
 └── assets/
     ├── platform_presets.json
     ├── masks/          # aspect-ratio and safezone PNGs
