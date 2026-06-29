@@ -9,8 +9,7 @@ type = "add-on"
 
 website = "https://github.com/dafassi/Blender-OpenGate"
 
-blender_version_min = "4.2.0"
-# Tested with Blender 5.1 — safe-area margins use scene.safe_areas (not camera.data).
+blender_version_min = "5.1.0"
 
 license = [
     "SPDX:GPL-3.0-or-later",

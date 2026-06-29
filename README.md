@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- Blender **4.2+** (developed and tested on **5.1**)
+- Blender **5.1+** — developed and tested on 5.1; older versions have not been tested.
 
 ## Installation
 
