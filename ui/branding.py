@@ -10,6 +10,9 @@ import bpy.utils.previews
 from ..core.paths import extension_asset_abspath
 
 TEAM_CREDIT_LABEL = "From the FLIP Fluids Addon Team"
+INSPIRED_BY_LABEL = (
+    "Inspired by camera open gate — square master for multi-format delivery"
+)
 TAGLINE_LABEL = "Sim once · publish everywhere"
 FLIP_FLUIDS_URL = "https://flipfluids.com/"
 MAINTAINER_LABEL = "Ryan Guy & Dennis Fassbaender"
@@ -91,6 +94,7 @@ def draw_preferences_about(layout: bpy.types.UILayout) -> None:
         block.separator(factor=0.5)
 
     _centered_label(block, TEAM_CREDIT_LABEL)
+    _centered_label(block, INSPIRED_BY_LABEL)
     _centered_label(block, f"By {MAINTAINER_LABEL}")
 
     mail_row = block.row()

@@ -6,6 +6,8 @@ OpenGate is a Blender extension for **composing** social-media content — not f
 
 It sets a square **Open Gate** master resolution and uses viewport masks to show how your shot would look on the channels you care about. Platform presets add delivery hints (resolution, frame rate, length) and spell out the **post crop size** for each format, so you know what to export and how to cut it later.
 
+Inspired by the open-gate workflow on cinema cameras (full sensor, crop in post) — adapted here as a **square** master canvas for multi-format social delivery.
+
 The idea is simple: frame once in Blender, render one square master, then crop in post for YouTube, Reels, Stories, feed, and more — without rebuilding the composition for every aspect ratio.
 
 ## Screenshots
