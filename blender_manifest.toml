@@ -1,0 +1,24 @@
+schema_version = "1.0.0"
+
+id = "opengate"
+version = "0.2.0"
+name = "OpenGate"
+tagline = "Social media render formats made simple"
+maintainer = "Ryan Guy & Dennis Fassbaender"
+type = "add-on"
+
+blender_version_min = "4.2.0"
+# Tested with Blender 5.1 — safe-area margins use scene.safe_areas (not camera.data).
+
+license = [
+    "SPDX:GPL-3.0-or-later",
+]
+
+copyright = [
+    "2026 Ryan Guy & Dennis Fassbaender",
+]
+
+tags = ["Render", "Camera", "Compositing"]
+
+[permissions]
+files = "Read and write mask combo assets bundled with the extension"

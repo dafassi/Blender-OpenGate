@@ -1,0 +1,243 @@
+{
+  "verified_as_of": "2026-06-29",
+  "disclaimer": "Verify platform specs before publish.",
+  "presets": [
+    {
+      "id": "YOUTUBE_SHORTS",
+      "label": "YouTube Shorts",
+      "mask_16_9": false,
+      "mask_9_16": true,
+      "mask_5_4": false,
+      "delivery_width": 1080,
+      "delivery_height": 1920,
+      "recommended_fps": [24, 25, 30, 48, 50, 60],
+      "max_duration_sec": 180,
+      "notes": "9:16 or 1:1, classified as Shorts when \u2264 3 min.",
+      "safezone_filename": ".opengate-9_16-yt_safezones.png",
+      "sources": [
+        {
+          "url": "https://support.google.com/youtube/answer/15424877",
+          "title": "Understand three-minute YouTube Shorts",
+          "fields": ["max_duration_sec", "notes"],
+          "excerpt": "Vertical or square videos up to three minutes are categorized as Shorts (uploaded on or after Oct 15, 2024)."
+        },
+        {
+          "url": "https://support.google.com/youtube/answer/1722171",
+          "title": "YouTube recommended upload encoding settings",
+          "fields": ["recommended_fps", "delivery_width", "delivery_height"],
+          "excerpt": "Common frame rates include: 24, 25, 30, 48, 50, 60 fps. Encode and upload in the same frame rate used when recording."
+        }
+      ]
+    },
+    {
+      "id": "YOUTUBE_16_9",
+      "label": "YouTube (16:9)",
+      "mask_16_9": true,
+      "mask_9_16": false,
+      "mask_5_4": false,
+      "delivery_width": 1920,
+      "delivery_height": 1080,
+      "recommended_fps": [24, 25, 30, 48, 50, 60],
+      "max_duration_sec": 43200,
+      "notes": "Landscape master \u2014 crop in post from Open Gate. Verified accounts: up to 12 hr.",
+      "safezone_filename": null,
+      "sources": [
+        {
+          "url": "https://support.google.com/youtube/answer/1722171",
+          "title": "YouTube recommended upload encoding settings",
+          "fields": ["recommended_fps", "delivery_width", "delivery_height"],
+          "excerpt": "Common frame rates include: 24, 25, 30, 48, 50, 60 fps. Standard aspect ratio on desktop is 16:9."
+        },
+        {
+          "url": "https://support.google.com/youtube/answer/71673",
+          "title": "Upload videos longer than 15 minutes",
+          "fields": ["max_duration_sec", "notes"],
+          "excerpt": "Verified accounts can upload videos up to 12 hours long."
+        }
+      ]
+    },
+    {
+      "id": "INSTAGRAM_REELS",
+      "label": "Instagram Reels",
+      "mask_16_9": false,
+      "mask_9_16": true,
+      "mask_5_4": false,
+      "delivery_width": 1080,
+      "delivery_height": 1920,
+      "recommended_fps": [30, 60],
+      "max_duration_sec": 1200,
+      "notes": "Upload up to 20 min (rollout varies). In-app record often capped lower. Min 30 fps.",
+      "safezone_filename": ".opengate-9_16-ig_safezones.png",
+      "sources": [
+        {
+          "url": "https://www.facebook.com/help/instagram/1038071743007909",
+          "title": "Reel size and aspect ratios on Instagram",
+          "fields": ["recommended_fps", "delivery_width", "delivery_height"],
+          "excerpt": "Aspect ratio 1.91:1\u20139:16. Minimum frame rate 30 FPS and minimum resolution 720 px."
+        },
+        {
+          "url": "https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/media/",
+          "title": "Instagram Graph API \u2014 IG User Media (Reels)",
+          "fields": ["max_duration_sec", "notes"],
+          "excerpt": "Reels support 9:16; consumer uploads up to 20 minutes (2025\u20132026 rollout, account-dependent)."
+        }
+      ]
+    },
+    {
+      "id": "INSTAGRAM_STORIES",
+      "label": "Instagram Stories",
+      "mask_16_9": false,
+      "mask_9_16": true,
+      "mask_5_4": false,
+      "delivery_width": 1080,
+      "delivery_height": 1920,
+      "recommended_fps": 30,
+      "max_duration_sec": 60,
+      "notes": "60 seconds per Story segment; longer uploads are trimmed or split.",
+      "safezone_filename": null,
+      "sources": [
+        {
+          "url": "https://www.facebook.com/help/instagram/314684928883274",
+          "title": "Tips for uploading, recording and editing your Instagram story",
+          "fields": ["max_duration_sec", "notes"],
+          "excerpt": "Videos longer than 60 seconds can be edited with the in-app trimmer (split into segments)."
+        },
+        {
+          "url": "https://www.facebook.com/help/instagram/1038071743007909",
+          "title": "Reel size and aspect ratios on Instagram",
+          "fields": ["recommended_fps", "delivery_width", "delivery_height"],
+          "excerpt": "Minimum frame rate 30 FPS applies to vertical video on Instagram; 9:16 is the Stories format."
+        }
+      ]
+    },
+    {
+      "id": "INSTAGRAM_FEED",
+      "label": "Instagram Feed",
+      "mask_16_9": false,
+      "mask_9_16": false,
+      "mask_5_4": true,
+      "delivery_width": 1080,
+      "delivery_height": 1350,
+      "recommended_fps": 30,
+      "max_duration_sec": 3600,
+      "notes": "4:5 feed portrait. Up to 60 min desktop; mobile uploads often cap at 15 min.",
+      "safezone_filename": null,
+      "sources": [
+        {
+          "url": "https://www.facebook.com/help/instagram/1038071743007909",
+          "title": "Reel size and aspect ratios on Instagram",
+          "fields": ["recommended_fps"],
+          "excerpt": "Minimum frame rate 30 FPS for vertical video on Instagram."
+        },
+        {
+          "url": "https://developers.facebook.com/docs/instagram/ads-api/reference/media-requirements/",
+          "title": "Instagram media requirements (Meta for Developers)",
+          "fields": ["delivery_width", "delivery_height", "max_duration_sec", "notes"],
+          "excerpt": "Feed supports 4:5 aspect ratio; videos between 3 sec and 60 min; minimum width 600 px (1080\u00d71350 is optimal 4:5)."
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK",
+      "label": "TikTok",
+      "mask_16_9": false,
+      "mask_9_16": true,
+      "mask_5_4": false,
+      "delivery_width": 1080,
+      "delivery_height": 1920,
+      "recommended_fps": 30,
+      "max_duration_sec": 3600,
+      "notes": "In-app record up to 10 min; TikTok Studio web upload up to 60 min. No official FPS list.",
+      "safezone_filename": ".opengate-9_16-tt_safezones.png",
+      "sources": [
+        {
+          "url": "https://www.tiktok.com/creator-academy/article/power-of-tiktok-studio-web",
+          "title": "TikTok Creator Academy \u2014 TikTok Studio Web",
+          "fields": ["max_duration_sec", "delivery_width", "delivery_height", "notes"],
+          "excerpt": "Upload videos up to 60 minutes long in 1080p, 2K, or 4K via TikTok Studio Web (up to 30 GB)."
+        },
+        {
+          "url": "https://support.tiktok.com/en/using-tiktok/creating-videos/camera-tools",
+          "title": "TikTok Support \u2014 Camera tools",
+          "fields": ["max_duration_sec", "notes"],
+          "excerpt": "In-app recording supports 15 s or 60 s segments; longer content is uploaded from device."
+        }
+      ]
+    },
+    {
+      "id": "FACEBOOK_REELS",
+      "label": "Facebook Reels",
+      "mask_16_9": false,
+      "mask_9_16": true,
+      "mask_5_4": false,
+      "delivery_width": 1080,
+      "delivery_height": 1920,
+      "recommended_fps": [24, 30, 60],
+      "max_duration_sec": null,
+      "notes": "9:16 recommended. Since June 2025 Meta: no length cap (all videos \u2192 Reels).",
+      "safezone_filename": ".opengate-9_16-fb_safezones.png",
+      "sources": [
+        {
+          "url": "https://www.facebook.com/business/help/1197310377458196",
+          "title": "Requirements for Facebook Reels",
+          "fields": ["recommended_fps", "delivery_width", "delivery_height", "max_duration_sec", "notes"],
+          "excerpt": "Recommended resolution 1080p, frame rate 24\u201360 FPS. Since June 2025 all Facebook videos post as Reels with no length cap."
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN",
+      "label": "LinkedIn",
+      "mask_16_9": true,
+      "mask_9_16": false,
+      "mask_5_4": false,
+      "delivery_width": 1920,
+      "delivery_height": 1080,
+      "recommended_fps": [24, 25, 30],
+      "max_duration_sec": 900,
+      "notes": "Landscape 1080p preferred. Up to 15 min desktop, 10 min mobile app.",
+      "safezone_filename": null,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/help/linkedin/answer/a548372",
+          "title": "Video sharing troubleshooting",
+          "fields": ["max_duration_sec", "recommended_fps", "notes"],
+          "excerpt": "Frame rates 10\u201360 fps; max duration 15 min desktop / 10 min mobile. 25 fps is within the supported range."
+        },
+        {
+          "url": "https://www.linkedin.com/help/linkedin/answer/a567498",
+          "title": "LinkedIn Live Video encoder settings",
+          "fields": ["recommended_fps", "delivery_width", "delivery_height"],
+          "excerpt": "Recommended 30 fps and 16:9; 720p recommended, 1080p maximum for live."
+        }
+      ]
+    },
+    {
+      "id": "X_POST",
+      "label": "X (Twitter)",
+      "mask_16_9": true,
+      "mask_9_16": false,
+      "mask_5_4": false,
+      "delivery_width": 1280,
+      "delivery_height": 720,
+      "recommended_fps": [24, 25, 30],
+      "max_duration_sec": 140,
+      "notes": "Free accounts: 2 min 20 sec. Premium: up to 4 hr on web/iOS (720p\u20131080p). Max 40 fps upload.",
+      "safezone_filename": null,
+      "sources": [
+        {
+          "url": "https://help.x.com/en/using-x/x-videos",
+          "title": "How to share and watch videos on X",
+          "fields": ["max_duration_sec", "recommended_fps", "delivery_width", "delivery_height", "notes"],
+          "excerpt": "Free uploads up to 140 s / 512 MB. Max resolution 1920\u00d71200; max frame rate 40 fps; max bitrate 25 Mbps."
+        },
+        {
+          "url": "https://help.x.com/en/using-x/premium-longer-videos",
+          "title": "About longer videos for X Premium subscribers",
+          "fields": ["max_duration_sec", "notes"],
+          "excerpt": "Premium: up to 4 hours (1080p) on web/iOS; up to 10 min on Android."
+        }
+      ]
+    }
+  ]
+}
