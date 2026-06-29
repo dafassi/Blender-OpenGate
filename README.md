@@ -1,6 +1,12 @@
 # OpenGate
 
-**Version 0.3.0** — Blender extension for social-media framing: render a square **Open Gate** master, preview aspect-ratio masks in the camera view, and export platform-ready crops for YouTube, Instagram, TikTok, Facebook, LinkedIn, and X.
+**Version 0.3.0**
+
+OpenGate is a Blender extension for **composing** social-media content — not for rendering platform-ready files or applying channel-specific render settings.
+
+It sets a square **Open Gate** master resolution and uses viewport masks to show how your shot would look on the channels you care about. Platform presets add delivery hints (resolution, frame rate, length) and spell out the **post crop size** for each format, so you know what to export and how to cut it later.
+
+The idea is simple: frame once in Blender, render one square master, then crop in post for YouTube, Reels, Stories, feed, and more — without rebuilding the composition for every aspect ratio.
 
 ## Screenshots
 
