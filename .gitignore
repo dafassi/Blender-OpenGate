@@ -4,3 +4,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 *.blend1
+
+# Internal development docs — kept locally, not published
+development/
+assets/masks/MASK_COMBO_MATRIX.md

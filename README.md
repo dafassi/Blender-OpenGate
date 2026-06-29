@@ -1,36 +1,52 @@
 # OpenGate
 
-Blender extension for social-media framing — square Open Gate master, crop in post.
+Blender extension for social-media framing: render a square **Open Gate** master, preview aspect-ratio masks in the camera view, and export platform-ready crops for YouTube, Instagram, TikTok, Facebook, LinkedIn, and X.
 
-**Docs:** `development/AGENT_CONTEXT.md` · `development/IMAGE_COLLECTOR.md`
+## Requirements
 
-## Development & attribution
+- Blender **4.2+** (developed and tested on **5.1**)
 
-OpenGate's concept, mask assets, architecture, and test design are original work
-by the FLIP Fluids team, crafted by hand. The Python source code was authored
-with assistance from artificial intelligence tools.
+## Installation
 
-## Layout
+1. Download or clone this repository.
+2. Install as a local extension (Blender **Edit → Preferences → Get Extensions → Install from Disk**)  
+   **or** copy the `opengate` folder into your Blender extensions directory, for example:  
+   `Blender/5.1/extensions/user_default/opengate`
+3. Enable **OpenGate** in Preferences → Extensions.
+
+## Quick start
+
+1. Open the **OpenGate** sidebar panel in the 3D Viewport.
+2. Assign a **Camera**.
+3. Choose a **Platform** preset (or toggle framing masks manually).
+4. For 9:16 platforms: optional **Show Safezones** (Instagram, YouTube, TikTok, Facebook Reels).
+5. Set **Canvas** resolution for your square master render.
+6. Press **NumPad 0** — the camera view shows the active mask as a background image.
+
+## Platform presets
+
+Delivery specs (resolution, recommended FPS, max length) live in `assets/platform_presets.json`.  
+Update that file to adjust recommendations without changing Python code.
+
+## Project layout
 
 ```
 opengate/
 ├── blender_manifest.toml
 ├── __init__.py
 ├── properties.py, prefs.py
-├── core/            # masks, image_collector, background_image, …
+├── core/
 ├── operators/, ui/
-├── assets/
-│   ├── platform_presets.json          # ← edit here to update platform specs
-│   ├── .opengate-logo_rev0.png
-│   ├── shader/opengate-imagecollector.blend
-│   └── masks/MASK_COMBO_MATRIX.md   # PNG names: `.opengate-…`
-└── development/
+└── assets/
+    ├── platform_presets.json
+    ├── masks/          # aspect-ratio and safezone PNGs
+    └── shader/         # image-collector blend
 ```
 
-## Quick start
+## License
 
-1. Enable extension in Blender 5.1+
-2. OpenGate panel → assign **Camera**
-3. Choose a **Platform** preset (or toggle framing masks manually)
-4. For 9:16 platforms: optional **Show Safezones** (IG / YT / TT / FB Reels)
-5. **NumPad 0** — camera view shows mask as background image
+GPL-3.0-or-later — see `blender_manifest.toml`.
+
+## Attribution
+
+OpenGate's concept, mask assets, architecture, and test design are original work by the FLIP Fluids team. The Python source code was authored with assistance from artificial intelligence tools.
