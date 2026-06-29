@@ -25,8 +25,7 @@
 
 ## Platform presets
 
-Delivery specs (resolution, recommended FPS, max length) live in `assets/platform_presets.json`.  
-Update that file to adjust recommendations without changing Python code.
+Choose a **Platform** preset in the OpenGate panel to apply the matching framing masks and see delivery recommendations — resolution, suggested frame rates, and maximum length — for that destination. Specs are verified periodically; always confirm current platform requirements before you publish.
 
 ## Project layout
 
@@ -53,5 +52,7 @@ GPL-3.0-or-later — see `blender_manifest.toml`.
 Contact: [support@flipfluids.com](mailto:support@flipfluids.com) · [flipfluids.com](https://flipfluids.com/)
 
 Concept, mask assets, and architecture are original work by the FLIP Fluids team.
+
+Platform delivery specs are maintained in `assets/platform_presets.json` — update that file to adjust recommendations without changing Python code.
 
 <sub>Python source was authored with AI assistance.</sub>
