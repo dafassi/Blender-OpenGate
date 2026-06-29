@@ -1,5 +1,8 @@
 """OpenGate — Social media render format extension for Blender.
 
+Copyright (C) 2026 Ryan Guy & Dennis Fassbaender
+SPDX-License-Identifier: GPL-3.0-or-later
+
 Developers: Ryan Guy & Dennis Fassbaender (support@flipfluids.com)
 
 Concept, masks, architecture, and tests are original work by the FLIP Fluids team.

@@ -49,6 +49,7 @@ The specs live in `assets/platform_presets.json`. We review platform changes reg
 
 ```
 opengate/
+├── LICENSE
 ├── blender_manifest.toml
 ├── __init__.py
 ├── properties.py, prefs.py
@@ -63,7 +64,13 @@ opengate/
 
 ## License
 
-GPL-3.0-or-later — see `blender_manifest.toml`.
+Copyright © 2026 Ryan Guy & Dennis Fassbaender.
+
+OpenGate is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License v3.0 or later](LICENSE) (SPDX: `GPL-3.0-or-later`).
+
+This applies to the source code and to bundled assets in this repository (mask images, logo, shader blend), unless noted otherwise.
+
+OpenGate is distributed in the hope that it will be useful, but **without any warranty**; without even the implied warranty of merchantability or fitness for a particular purpose. See the [full GPL text](LICENSE) or [gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Developers
 
