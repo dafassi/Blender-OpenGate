@@ -1,11 +1,13 @@
 schema_version = "1.0.0"
 
 id = "opengate"
-version = "0.2.0"
+version = "0.3.0"
 name = "OpenGate"
 tagline = "Social media render formats made simple"
-maintainer = "Ryan Guy & Dennis Fassbaender"
+maintainer = "Ryan Guy & Dennis Fassbaender <support@flipfluids.com>"
 type = "add-on"
+
+website = "https://github.com/dafassi/Blender-OpenGate"
 
 blender_version_min = "4.2.0"
 # Tested with Blender 5.1 — safe-area margins use scene.safe_areas (not camera.data).

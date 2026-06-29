@@ -1,7 +1,9 @@
 """OpenGate — Social media render format extension for Blender.
 
-Concept, masks, architecture, and tests are original handcrafted work by the
-FLIP Fluids team. Python source code was written with AI assistance.
+Developers: Ryan Guy & Dennis Fassbaender (support@flipfluids.com)
+
+Concept, masks, architecture, and tests are original work by the FLIP Fluids team.
+Note: Python source was written with AI assistance.
 """
 
 from . import (

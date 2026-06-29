@@ -1,6 +1,6 @@
 # OpenGate
 
-Blender extension for social-media framing: render a square **Open Gate** master, preview aspect-ratio masks in the camera view, and export platform-ready crops for YouTube, Instagram, TikTok, Facebook, LinkedIn, and X.
+**Version 0.3.0** — Blender extension for social-media framing: render a square **Open Gate** master, preview aspect-ratio masks in the camera view, and export platform-ready crops for YouTube, Instagram, TikTok, Facebook, LinkedIn, and X.
 
 ## Requirements
 
@@ -47,6 +47,11 @@ opengate/
 
 GPL-3.0-or-later — see `blender_manifest.toml`.
 
-## Attribution
+## Developers
 
-OpenGate's concept, mask assets, architecture, and test design are original work by the FLIP Fluids team. The Python source code was authored with assistance from artificial intelligence tools.
+**Ryan Guy & Dennis Fassbaender**  
+Contact: [support@flipfluids.com](mailto:support@flipfluids.com) · [flipfluids.com](https://flipfluids.com/)
+
+Concept, mask assets, and architecture are original work by the FLIP Fluids team.
+
+<sub>Python source was authored with AI assistance.</sub>

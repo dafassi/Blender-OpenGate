@@ -13,12 +13,14 @@ TEAM_CREDIT_LABEL = "From the FLIP Fluids Addon Team"
 TAGLINE_LABEL = "Sim once · publish everywhere"
 FLIP_FLUIDS_URL = "https://flipfluids.com/"
 MAINTAINER_LABEL = "Ryan Guy & Dennis Fassbaender"
+SUPPORT_EMAIL = "support@flipfluids.com"
 
 from ..core.paths import prefixed_image_filename
 
 LOGO_FILENAME = prefixed_image_filename("opengate-logo_rev0.png")
 LOGO_PREVIEW_KEY = "opengate_logo"
 LOGO_ICON_SCALE = 5.5
+LOGO_ICON_SCALE_PREFS = 4.0
 # Blender rows align to the top by default — pad with scale_y to center visually.
 PANEL_VERTICAL_PAD = 0.65
 TEXT_VERTICAL_PAD = 1.35
@@ -77,6 +79,26 @@ def _draw_branding_text(parent: bpy.types.UILayout) -> None:
     _vertical_pad(block, TEXT_VERTICAL_PAD)
 
 
+def draw_preferences_about(layout: bpy.types.UILayout) -> None:
+    """Centered About block for extension preferences."""
+    block = layout.column(align=True)
+
+    icon_id = logo_icon_id()
+    if icon_id:
+        logo_row = block.row()
+        logo_row.alignment = "CENTER"
+        logo_row.template_icon(icon_value=icon_id, scale=LOGO_ICON_SCALE_PREFS)
+        block.separator(factor=0.5)
+
+    _centered_label(block, TEAM_CREDIT_LABEL)
+    _centered_label(block, f"By {MAINTAINER_LABEL}")
+
+    mail_row = block.row()
+    mail_row.alignment = "CENTER"
+    mail = mail_row.operator("wm.url_open", text=SUPPORT_EMAIL, emboss=False)
+    mail.url = f"mailto:{SUPPORT_EMAIL}"
+
+
 def draw_team_branding(layout: bpy.types.UILayout) -> None:
     box = layout.box()
     outer = box.column(align=True)
@@ -92,12 +114,12 @@ def draw_team_branding(layout: bpy.types.UILayout) -> None:
         logo_row.alignment = "CENTER"
         logo_row.template_icon(icon_value=icon_id, scale=LOGO_ICON_SCALE)
 
-        text_wrap = row.row()
+        text_wrap = row.row(align=True)
         text_wrap.alignment = "CENTER"
         text_wrap.scale_x = 1.0
         _draw_branding_text(text_wrap)
     else:
-        text_wrap = row.row()
+        text_wrap = row.row(align=True)
         text_wrap.alignment = "CENTER"
         text_wrap.scale_x = 1.0
         _draw_branding_text(text_wrap)

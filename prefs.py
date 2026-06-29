@@ -3,7 +3,7 @@
 import bpy
 from bpy.props import FloatProperty
 
-from .ui.branding import FLIP_FLUIDS_URL, MAINTAINER_LABEL, draw_team_branding
+from .ui.branding import draw_preferences_about
 
 
 class OpenGatePreferences(bpy.types.AddonPreferences):
@@ -20,15 +20,11 @@ class OpenGatePreferences(bpy.types.AddonPreferences):
 
     def draw(self, context):
         layout = self.layout
+        layout.use_property_split = False
 
         box = layout.box()
         box.label(text="About", icon="INFO")
-        draw_team_branding(box)
-        row = box.row()
-        row.label(text="Maintainer")
-        row.label(text=MAINTAINER_LABEL)
-        row = box.row()
-        row.operator("wm.url_open", text="FLIP Fluids", icon="URL").url = FLIP_FLUIDS_URL
+        draw_preferences_about(box)
 
         layout.separator()
         layout.prop(self, "default_mask_opacity")
