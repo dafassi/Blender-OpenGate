@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 import bpy
 
 from . import masks
@@ -11,6 +13,8 @@ OPENGATE_CANVAS_SIZE = 4320
 CANVAS_RESOLUTION_MIN = 10.0
 CANVAS_RESOLUTION_MAX = 100.0
 CANVAS_RESOLUTION_DEFAULT = 50.0
+
+RENDER_BACKUP_KEY = "opengate_render_backup"
 
 # Ordered for the 2-column preset button grid (landscape 16:9 frame widths at 100% gate).
 CANVAS_FORMAT_PRESETS: tuple[tuple[str, float, str], ...] = (
@@ -161,8 +165,40 @@ def combined_frame_resolution_label(mask_flags: int, percent: float) -> str | No
     return f"{width}×{height}"
 
 
+def _serialize_render_settings(render: bpy.types.RenderSettings) -> dict:
+    return {
+        "resolution_x": int(render.resolution_x),
+        "resolution_y": int(render.resolution_y),
+        "resolution_percentage": int(render.resolution_percentage),
+        "pixel_aspect_x": float(render.pixel_aspect_x),
+        "pixel_aspect_y": float(render.pixel_aspect_y),
+    }
+
+
+def _backup_render_resolution(scene: bpy.types.Scene) -> None:
+    if RENDER_BACKUP_KEY in scene:
+        return
+    scene[RENDER_BACKUP_KEY] = json.dumps(_serialize_render_settings(scene.render))
+
+
+def restore_render_resolution(scene: bpy.types.Scene) -> None:
+    backup_raw = scene.get(RENDER_BACKUP_KEY)
+    if not backup_raw:
+        return
+
+    payload = json.loads(backup_raw)
+    render = scene.render
+    render.resolution_x = int(payload["resolution_x"])
+    render.resolution_y = int(payload["resolution_y"])
+    render.resolution_percentage = int(payload.get("resolution_percentage", 100))
+    render.pixel_aspect_x = float(payload.get("pixel_aspect_x", 1.0))
+    render.pixel_aspect_y = float(payload.get("pixel_aspect_y", 1.0))
+    del scene[RENDER_BACKUP_KEY]
+
+
 def apply_canvas_resolution(scene: bpy.types.Scene, percent: float) -> None:
     """Set square render resolution; 100% equals OPENGATE_CANVAS_SIZE."""
+    _backup_render_resolution(scene)
     size = canvas_pixel_size(percent)
     render = scene.render
     render.resolution_x = size

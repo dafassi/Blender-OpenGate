@@ -16,7 +16,6 @@ from . import (
     ui,
 )
 from .core import handlers
-from .core.render_format import apply_opengate_canvas_to_all_scenes
 
 _modules = (
     properties,
@@ -30,7 +29,6 @@ def register():
     for mod in _modules:
         mod.register()
     handlers.register()
-    apply_opengate_canvas_to_all_scenes()
 
 
 def unregister():

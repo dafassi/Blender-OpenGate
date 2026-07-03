@@ -23,6 +23,7 @@ from .paths import extension_asset_abspath
 
 COLLECTOR_BLEND_PARTS = ("assets", "shader", "opengate-imagecollector.blend")
 COLLECTOR_OBJECT_NAME = "opengate-imagecollector"
+COLLECTOR_MATERIAL_NAME = "opengate-mask"
 OPENGATE_BG_GL_LOADED_KEY = "opengate_bg_gl_loaded"
 
 _COLLECTOR_IMAGES_TAGGED = False
@@ -169,18 +170,44 @@ def _is_collector_mask_image(image: bpy.types.Image) -> bool:
     return False
 
 
+def _collector_materials(obj: bpy.types.Object) -> list[bpy.types.Material]:
+    materials: list[bpy.types.Material] = []
+    if obj.type != "MESH":
+        return materials
+    for slot in obj.material_slots:
+        if slot.material is not None and slot.material not in materials:
+            materials.append(slot.material)
+    return materials
+
+
+def _remove_orphan_collector_materials(
+    materials: list[bpy.types.Material],
+) -> None:
+    by_name = bpy.data.materials.get(COLLECTOR_MATERIAL_NAME)
+    if by_name is not None and by_name not in materials:
+        materials.append(by_name)
+
+    for material in materials:
+        if material.users == 0:
+            bpy.data.materials.remove(material)
+
+
 def remove_image_collector() -> bool:
     """Remove the appended collector object and unused OpenGate mask images."""
     global _COLLECTOR_IMAGES_TAGGED
     removed_object = False
+    materials: list[bpy.types.Material] = []
 
     obj = bpy.data.objects.get(COLLECTOR_OBJECT_NAME)
     if obj is not None:
+        materials = _collector_materials(obj)
         mesh = obj.data if obj.type == "MESH" else None
         bpy.data.objects.remove(obj, do_unlink=True)
         if mesh is not None and mesh.users == 0:
             bpy.data.meshes.remove(mesh)
         removed_object = True
+
+    _remove_orphan_collector_materials(materials)
 
     for image in list(bpy.data.images):
         if image.users != 0 or not _is_collector_mask_image(image):

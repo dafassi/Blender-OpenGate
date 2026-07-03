@@ -24,7 +24,7 @@ from .core.camera_target import (
     target_camera_update_suppressed,
 )
 from .core.masks import has_active_framing_mask, MaskFlag
-from .core.mask_setup import try_ensure_mask_setup
+from .core.mask_setup import mask_setup_clearing, try_ensure_mask_setup
 from .core.render_format import (
     CANVAS_RESOLUTION_DEFAULT,
     CANVAS_RESOLUTION_MAX,
@@ -88,7 +88,7 @@ def _platform_preset_update(self, context):
 
 
 def _sync_mask_opacity_update(self, context):
-    if context is None:
+    if context is None or mask_setup_clearing():
         return
     scene = context.scene
     if has_active_framing_mask(self) and self.show_mask:
@@ -98,7 +98,7 @@ def _sync_mask_opacity_update(self, context):
 
 
 def _sync_mask_update(self, context):
-    if context is None:
+    if context is None or mask_setup_clearing():
         return
     if (
         not _APPLYING_PLATFORM_PRESET
@@ -126,6 +126,8 @@ def _sync_mask_update(self, context):
 
 
 def _apply_canvas_resolution_update(self, context):
+    if context is None or mask_setup_clearing():
+        return
     apply_canvas_resolution(context.scene, self.canvas_resolution)
     if has_active_framing_mask(self):
         schedule_camera_safe_areas_sync(context.scene)
