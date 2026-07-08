@@ -66,7 +66,7 @@ opengate/
 
 ## License
 
-Copyright © 2026 Ryan Guy & Dennis Fassbaender.
+Copyright © 2026 Dennis Fassbaender & Ryan Guy.
 
 OpenGate is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License v3.0 or later](LICENSE) (SPDX: `GPL-3.0-or-later`).
 
@@ -76,7 +76,7 @@ OpenGate is distributed in the hope that it will be useful, but **without any wa
 
 ## Developers
 
-**Ryan Guy & Dennis Fassbaender**  
+**Dennis Fassbaender & Ryan Guy**  
 Contact: [support@flipfluids.com](mailto:support@flipfluids.com) · [flipfluids.com](https://flipfluids.com/)
 
 Concept, mask assets, and architecture are original work by the FLIP Fluids team.

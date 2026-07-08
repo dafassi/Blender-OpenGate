@@ -15,7 +15,7 @@ INSPIRED_BY_LABEL = (
 )
 TAGLINE_LABEL = "Sim once · publish everywhere"
 FLIP_FLUIDS_URL = "https://flipfluids.com/"
-MAINTAINER_LABEL = "Ryan Guy & Dennis Fassbaender"
+MAINTAINER_LABEL = "Dennis Fassbaender & Ryan Guy"
 SUPPORT_EMAIL = "support@flipfluids.com"
 
 from ..core.paths import prefixed_image_filename
