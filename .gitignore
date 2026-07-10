@@ -5,6 +5,14 @@ __pycache__/
 Thumbs.db
 *.blend1
 
+# Release build output — local zips for GitHub / Superhive
+dist/
+
+# Local-only tooling and docs (not in release zip)
+build_release.ps1
+sync.ffs_db
+docs/
+
 # Internal development docs — kept locally, not published
 development/
 assets/masks/MASK_COMBO_MATRIX.md

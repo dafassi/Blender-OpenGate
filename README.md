@@ -10,16 +10,6 @@ Inspired by the open-gate workflow on cinema cameras (full sensor, crop in post)
 
 The idea is simple: frame once in Blender, render one square master, then crop in post for YouTube, Reels, Stories, feed, and more — without rebuilding the composition for every aspect ratio.
 
-## Screenshots
-
-**16:9 landscape framing**
-
-![OpenGate 16:9 viewport framing](docs/screenshots/opengate-16_9.jpg)
-
-**9:16 portrait framing (with safe zones)**
-
-![OpenGate 9:16 viewport framing](docs/screenshots/opengate-9_16.jpg)
-
 ## Requirements
 
 - Blender **5.1+** — developed and tested on 5.1; older versions have not been tested.
@@ -57,7 +47,6 @@ opengate/
 ├── properties.py, prefs.py
 ├── core/
 ├── operators/, ui/
-├── docs/screenshots/   # README images
 └── assets/
     ├── platform_presets.json
     ├── masks/          # aspect-ratio and safezone PNGs
