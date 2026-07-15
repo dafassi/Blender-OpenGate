@@ -1,6 +1,6 @@
 # OpenGate
 
-**Version 0.3.2**
+**Version 0.3.3**
 
 OpenGate is a Blender extension for **composing** social-media content — not for rendering platform-ready files or applying channel-specific render settings.
 
