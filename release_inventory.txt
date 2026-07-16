@@ -1,0 +1,46 @@
+# OpenGate release payload inventory (v0.3.4 baseline)
+# One relative path per line. These files must exist in the repo, be git-tracked,
+# and appear in dist/opengate-<version>.zip under opengate/<path>.
+# Update this list only when the published extension layout intentionally changes.
+
+__init__.py
+LICENSE
+README.md
+blender_manifest.toml
+prefs.py
+properties.py
+assets/.opengate-logo_rev0.png
+assets/platform_presets.json
+assets/shader/opengate-imagecollector.blend
+assets/masks/.opengate-16_9.png
+assets/masks/.opengate-16_9-5_4.png
+assets/masks/.opengate-16_9-9_16.png
+assets/masks/.opengate-16_9-9_16-5_4.png
+assets/masks/.opengate-5_4.png
+assets/masks/.opengate-9_16.png
+assets/masks/.opengate-9_16-5_4.png
+assets/masks/.opengate-9_16-fb_safezones.png
+assets/masks/.opengate-9_16-ig_safezones.png
+assets/masks/.opengate-9_16-tt_safezones.png
+assets/masks/.opengate-9_16-yt_safezones.png
+core/__init__.py
+core/background_image.py
+core/blender_compat.py
+core/camera_display.py
+core/camera_target.py
+core/handlers.py
+core/image_collector.py
+core/mask_combo_matrix.py
+core/mask_combos.py
+core/mask_setup.py
+core/masks.py
+core/paths.py
+core/platform_presets.py
+core/render_format.py
+operators/__init__.py
+operators/canvas_preset.py
+operators/remove_setup.py
+operators/select_target_camera.py
+ui/__init__.py
+ui/branding.py
+ui/panels.py

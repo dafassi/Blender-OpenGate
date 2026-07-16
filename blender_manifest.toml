@@ -1,10 +1,10 @@
 schema_version = "1.0.0"
 
 id = "opengate"
-version = "0.3.3"
+version = "0.3.4"
 name = "OpenGate"
 tagline = "Social media render formats made simple"
-maintainer = "Dennis Fassbaender & Ryan Guy (support@flipfluids.com)"
+maintainer = "Dennis Fassbaender & Ryan Guy // support@flipfluids.com"
 type = "add-on"
 
 website = "https://github.com/dafassi/Blender-OpenGate"

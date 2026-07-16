@@ -1,0 +1,46 @@
+---
+description: OpenGate release checklist — run verify_release.ps1 after every version bump, push, and ZIP build
+alwaysApply: false
+---
+
+# OpenGate Release Checks (mandatory)
+
+After **every** release workflow (version bump → repo update → `build_release.ps1`), run:
+
+```powershell
+.\verify_release.ps1
+```
+
+Do not finish the release until verification passes.
+
+## What must match
+
+**Payload (41 files)** — frozen in `release_inventory.txt` (baseline v0.3.4). Each path must:
+
+1. Exist on disk
+2. Be git-tracked
+3. Appear in `dist/opengate-<version>.zip` as `opengate/<path>`
+
+**Git-only extras** (tracked, not in ZIP):
+
+- `.gitignore`
+- `release_inventory.txt`
+- `verify_release.ps1`
+
+**Local-only** (must NOT be git-tracked and NOT in ZIP):
+
+- `build_release.ps1`, `development/`, `docs/`, `dist/`
+- `assets/masks/MASK_COMBO_MATRIX.md`
+- `__pycache__/`, `*.pyc`, `.DS_Store`, `Thumbs.db`, `sync.ffs_db`
+- Legacy `opengate-combo-*.png` exports
+
+## Version & manifest
+
+- `blender_manifest.toml` `version` = `README.md` `**Version X.Y.Z**`
+- `maintainer` must use `Name // email@example.com` — **no angle brackets or parentheses** around the email (Superhive bug)
+
+## When layout changes intentionally
+
+1. Update `release_inventory.txt`
+2. Update `build_release.ps1` exclude rules if needed
+3. Re-run `.\verify_release.ps1` until OK
