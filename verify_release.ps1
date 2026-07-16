@@ -28,13 +28,15 @@ if ($expected.Count -eq 0) {
 $allowedGitOnly = @(
     ".gitignore",
     "release_inventory.txt",
-    "verify_release.ps1"
+    "verify_release.ps1",
+    ".cursor/rules/release-checks.mdc"
 )
 
 $forbiddenZipFragments = @(
     "/development/",
     "/docs/",
     "/.git/",
+    "/.cursor/",
     "/__pycache__/",
     "/dist/",
     "MASK_COMBO_MATRIX.md",

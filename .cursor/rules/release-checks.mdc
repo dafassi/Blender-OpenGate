@@ -26,6 +26,7 @@ Do not finish the release until verification passes.
 - `.gitignore`
 - `release_inventory.txt`
 - `verify_release.ps1`
+- `.cursor/rules/release-checks.mdc`
 
 **Local-only** (must NOT be git-tracked and NOT in ZIP):
 
